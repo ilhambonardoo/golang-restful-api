@@ -85,6 +85,45 @@
           }
         }
       }
+    },
+    "/categories/{categoryId}" : {
+      "get" : {
+        "summary": "Get Category by Id",
+        "tags": ["Category API"],
+        "description": "Get Category by Id",
+        "parameters": [
+          {
+            "schema": false,
+            "required": true,
+            "name": "categoryId",
+            "in": "path",
+            "description": "Category Id"
+          }
+        ],
+        "responses": {
+         "200" :{
+           "description": "Success Create Category",
+           "content": {
+             "application/json" : {
+               "schema": {
+                 "type": ["object"],
+                 "properties": {
+                   "code" : {
+                     "type": ["number"]
+                   },
+                   "status" : {
+                     "type": ["string"]
+                   },
+                   "data" : {
+                     "$ref": "#/components/schemas/Category"
+                   }
+                 }
+               }
+             }
+           }
+         }
+        }
+      }
     }
   },
   "components": {
