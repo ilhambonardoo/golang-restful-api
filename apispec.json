@@ -63,7 +63,7 @@
           }
         },
         "responses": {
-          "200" :{
+          "201" :{
             "description": "Success Create Category",
             "content": {
               "application/json" : {
@@ -155,7 +155,7 @@
         },
         "responses": {
           "200" : {
-            "description": "Success Create Category",
+            "description": "Success Update Category",
             "content": {
               "application/json" : {
                 "schema": {
