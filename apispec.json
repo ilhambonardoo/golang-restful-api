@@ -51,12 +51,7 @@
           "content": {
             "application/json" : {
               "schema": {
-                "type": ["object"],
-                "properties": {
-                  "name" : {
-                    "type": ["string"]
-                  }
-                }
+                "$ref": "#/components/schemas/CreateOrUpdateCategory"
               }
             }
           }
@@ -101,7 +96,7 @@
           }
         ],
         "responses": {
-         "200" :{
+          "200" : {
            "description": "Success Create Category",
            "content": {
              "application/json" : {
@@ -121,7 +116,53 @@
                }
              }
            }
-         }
+          }
+        }
+      },
+      "put" : {
+        "tags": ["Category API"],
+        "summary": "Update Category by Id",
+        "description": "Update Category by Id",
+        "parameters": [
+          {
+            "schema": false,
+            "required": true,
+            "name": "categoryId",
+            "in": "path",
+            "description": "Category Id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrUpdateCategory"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200" : {
+            "description": "Success Create Category",
+            "content": {
+              "application/json" : {
+                "schema": {
+                  "type": ["object"],
+                  "properties": {
+                    "code" : {
+                      "type": ["number"]
+                    },
+                    "status" : {
+                      "type": ["string"]
+                    },
+                    "data" : {
+                      "$ref": "#/components/schemas/Category"
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -134,6 +175,15 @@
           "id" : {
             "type": ["number"]
           },
+          "name" : {
+            "type": ["string"]
+          }
+        }
+      },
+      "CreateOrUpdateCategory" :
+      {
+        "type": ["object"],
+        "properties": {
           "name" : {
             "type": ["string"]
           }
