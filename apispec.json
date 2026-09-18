@@ -164,6 +164,40 @@
             }
           }
         }
+      },
+      "delete": {
+        "summary": "Delete Category by Id",
+        "tags": ["Category API"],
+        "description": "Delete Category by Id",
+        "parameters": [
+          {
+            "schema": false,
+            "required": true,
+            "name": "categoryId",
+            "in": "path",
+            "description": "Category Id"
+          }
+        ],
+        "responses": {
+          "200" : {
+            "description": "Success Delete Category",
+            "content": {
+              "application/json" : {
+                "schema": {
+                  "type": ["object"],
+                  "properties": {
+                    "code" : {
+                      "type": ["number"]
+                    },
+                    "status" : {
+                      "type": ["string"]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
