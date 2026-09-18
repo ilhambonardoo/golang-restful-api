@@ -97,7 +97,9 @@
         "description": "Get Category by Id",
         "parameters": [
           {
-            "schema": false,
+            "schema": {
+              "type": ["integer"]
+            },
             "required": true,
             "name": "categoryId",
             "in": "path",
@@ -137,7 +139,9 @@
         "description": "Update Category by Id",
         "parameters": [
           {
-            "schema": false,
+            "schema": {
+              "type": ["integer"]
+            },
             "required": true,
             "name": "categoryId",
             "in": "path",
@@ -186,7 +190,9 @@
         "description": "Delete Category by Id",
         "parameters": [
           {
-            "schema": false,
+            "schema": {
+              "type": ["integer"]
+            },
             "required": true,
             "name": "categoryId",
             "in": "path",
