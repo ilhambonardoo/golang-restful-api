@@ -43,4 +43,8 @@ go get [github.com/julienschmidt/httprouter](https://github.com/julienschmidt/ht
 
 # Validator v10 untuk Validasi Input Struct
 go get [github.com/go-playground/validator/v10](https://github.com/go-playground/validator/v10)
+
+# Unit testing
+go get [github.com/stretchr/testify](https://github.com/stretchr/testify)
+go get github.com/stretchr/testify/assert/yaml@v1.12.1
 ```
