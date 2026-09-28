@@ -47,4 +47,10 @@ go get [github.com/go-playground/validator/v10](https://github.com/go-playground
 # Unit testing
 go get [github.com/stretchr/testify](https://github.com/stretchr/testify)
 go get github.com/stretchr/testify/assert/yaml@v1.12.1
+
+# Google Wire
+go get github.com/google/wire
+
+# Install Google Wire
+ go install github.com/google/wire/cmd/wire@latest
 ```
