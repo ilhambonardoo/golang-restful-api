@@ -7,7 +7,7 @@ import "github.com/google/wire"
 
 func InitializedService() *SimpleService {
 	wire.Build(NewSimpleRepository, NewSimpleService)
-	return nill
+	return nil
 }
 
 /*

@@ -13,8 +13,8 @@ func NewSimpleRepository() *SimpleRepository {
 	return &SimpleRepository{}
 }
 
-func NewSimpleService(repository SimpleRepository) *SimpleService {
+func NewSimpleService(repository *SimpleRepository) *SimpleService {
 	return &SimpleService{
-		SimpleRepository: &repository,
+		SimpleRepository: repository,
 	}
 }
