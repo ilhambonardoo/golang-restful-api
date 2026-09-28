@@ -10,6 +10,11 @@ func InitializedService(isError bool) (*SimpleService, error) {
 	return nil, nil
 }
 
+func IntializedDatabaseRepository() *DatabaseRepository {
+	wire.Build(NewDatabaseMongoDB, NewDatabasePostgresSQL, NewDatabaseRepository)
+	return nil
+}
+
 /*
 	Injector
 	- Setelah kita membuat Provider untuk nanti kita gunakan, selanjutnya kita perlu membuat Injector

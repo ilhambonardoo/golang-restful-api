@@ -1,0 +1,28 @@
+package simple
+
+type Database struct {
+	Name string
+}
+
+type DatabasePostgresSQL Database
+type DatabaseMongoDB Database
+
+func NewDatabaseMongoDB() *DatabaseMongoDB {
+	return (*DatabaseMongoDB)(&Database{Name: "MongoDB"})
+}
+
+func NewDatabasePostgresSQL() *DatabasePostgresSQL {
+	return (*DatabasePostgresSQL)(&Database{Name: "PostgreSQL"})
+}
+
+type DatabaseRepository struct {
+	DatabasePostgresSQL *DatabasePostgresSQL
+	DatabaseMongoDB     *DatabaseMongoDB
+}
+
+func NewDatabaseRepository(postgresSQL *DatabasePostgresSQL, mongoDB *DatabaseMongoDB) *DatabaseRepository {
+	return &DatabaseRepository{
+		DatabasePostgresSQL: postgresSQL,
+		DatabaseMongoDB:     mongoDB,
+	}
+}
