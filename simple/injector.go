@@ -65,6 +65,11 @@ func InitializedConfiguration() *Configuration {
 	return nil
 }
 
+func InitializedConnection(name string) (*Connection, func()) {
+	wire.Build(NewConnection, NewFile)
+	return nil, nil
+}
+
 /*
 	Injector
 	- Setelah kita membuat Provider untuk nanti kita gunakan, selanjutnya kita perlu membuat Injector
