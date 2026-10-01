@@ -60,6 +60,11 @@ func InitializedReader() io.Reader {
 	return nil
 }
 
+func InitializedConfiguration() *Configuration {
+	wire.Build(NewApplication, wire.FieldsOf(new(*Application), "Configuration"))
+	return nil
+}
+
 /*
 	Injector
 	- Setelah kita membuat Provider untuk nanti kita gunakan, selanjutnya kita perlu membuat Injector
