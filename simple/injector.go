@@ -23,6 +23,20 @@ func InitializedFooBarService() *FooBarService {
 	return nil
 }
 
+// Salah
+//func InitializedHelloService() *HelloService {
+//	wire.Build(NewHelloService, NewSayHelloImpl)
+//	return nil
+//}
+
+// Benar
+var helloSet = wire.NewSet(NewSayHelloImpl, wire.Bind(new(SayHello), new(*SayHelloImpl)))
+
+func InitializedHelloService() *HelloService {
+	wire.Build(helloSet, NewHelloService)
+	return nil
+}
+
 /*
 	Injector
 	- Setelah kita membuat Provider untuk nanti kita gunakan, selanjutnya kita perlu membuat Injector
